@@ -1,4 +1,5 @@
 import re
+#library 
 ENG_TO_MORSE = {1
     'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 
     'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..',
@@ -9,6 +10,7 @@ ENG_TO_MORSE = {1
     '8': '---..', '9': '----.'
 }
 MORSE_TO_ENG = {value: key for key, value in ENG_TO_MORSE.items()}
+#translation functions
 def eng_to_morse(text):
     text = re.sub('[^A-Za-z0-9]', ' ', text.upper())
     return ' '.join([ENG_TO_MORSE.get(char, '') for char in text])
